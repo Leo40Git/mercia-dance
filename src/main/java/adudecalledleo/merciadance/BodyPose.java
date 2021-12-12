@@ -2,7 +2,10 @@ package adudecalledleo.merciadance;
 
 public record BodyPose(LimbPose leftArmPose, LimbPose rightArmPose,
                        LimbPose leftLegPose, LimbPose rightLegPose) {
-    public static final BodyPose[] BODY_POSES = {
+    public static final int[] LEFT_LEG_HEIGHTS = { 279, 68, 206, 33 };
+    public static final int[] RIGHT_LEG_HEIGHTS = { 286, 81, 211, 40 };
+
+    public static final BodyPose[] VALUES = {
             // front view
             new BodyPose(new LimbPose(148, 213, false), new LimbPose(230, 210, false),
                     new LimbPose(163, 367, false), new LimbPose(212, 364, false)),

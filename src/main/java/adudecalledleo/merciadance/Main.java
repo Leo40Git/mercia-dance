@@ -15,8 +15,6 @@ import javax.swing.*;
 
 public final class Main {
     private static final Color BACKGROUND = Color.WHITE;
-    private static final int[] LEFT_LEG_HEIGHTS = { 279, 68, 206, 33 };
-    private static final int[] RIGHT_LEG_HEIGHTS = { 286, 81, 211, 40 };
 
     private static final String ARG_POSE_PREFIX = "/pose:";
 
@@ -75,8 +73,8 @@ public final class Main {
             rleg = random.nextInt(Resources.RIGHT_LEGS.length);
         }
 
-        int llegH = LEFT_LEG_HEIGHTS[lleg];
-        int rlegH = RIGHT_LEG_HEIGHTS[rleg];
+        int llegH = BodyPose.LEFT_LEG_HEIGHTS[lleg];
+        int rlegH = BodyPose.RIGHT_LEG_HEIGHTS[rleg];
 
         BufferedImage image = new BufferedImage(816, 624, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g = image.createGraphics();
@@ -84,7 +82,7 @@ public final class Main {
         g.setBackground(BACKGROUND);
         g.clearRect(0, 0, image.getWidth(), image.getHeight());
 
-        BodyPose bodyPose = BodyPose.BODY_POSES[body];
+        BodyPose bodyPose = BodyPose.VALUES[body];
         int heightOffset;
         if (llegH >= rlegH) {
             heightOffset = llegH - rlegH;
